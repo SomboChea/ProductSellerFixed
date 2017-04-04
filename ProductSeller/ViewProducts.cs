@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProductSeller
@@ -115,7 +108,6 @@ namespace ProductSeller
         bool lb1 = false;
         bool lb2 = false;
         bool lb3 = false;
-        bool check_update = false;
 
         private void TxtPname_TextChanged(object sender, EventArgs e)
         {
