@@ -51,6 +51,7 @@ namespace ProductSeller
             
         }
 
+        //Button add data to list
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             int id = Data.Id;
@@ -60,6 +61,7 @@ namespace ProductSeller
 
             Products p = new Products(id, pname, qty, uprice);
 
+            //Add data to list and ListView
             Data.List.Add(p);
             ListViewMain.Items.Add(p.item());
 
@@ -69,6 +71,7 @@ namespace ProductSeller
             Clear();
         }
 
+        //Clear data from textbox
         private void Clear()
         {
             TxtPname.Clear();
@@ -76,8 +79,10 @@ namespace ProductSeller
             TxtUprice.Clear();
         }
 
+        //Button view products and actions
         private void BtnView_Click(object sender, EventArgs e)
         {
+            //Check if have data in textbox store it, when load view products
             if(TxtPname.Text.Trim()!="" || TxtQty.Text.Trim()!="" || TxtUprice.Text.Trim() != "")
             {
                 Data.Temp_pname = TxtPname.Text.Trim();
@@ -93,14 +98,17 @@ namespace ProductSeller
                 Data.Check_temp = false;
             }
 
+            //Load View Products and hide Main
             Hide();
             new ViewProducts().Show();
         }
 
+        //Defined for check error when typing to textbox data
         bool lb1 = false;
         bool lb2 = false;
         bool lb3 = false;
 
+        //TxtPname textbox when has an action
         private void TxtPname_TextChanged(object sender, EventArgs e)
         {
             if (TxtPname.Text.Trim() != "")
@@ -118,6 +126,7 @@ namespace ProductSeller
             
         }
 
+        //TxtQty textbox when has an action
         private void TxtQty_TextChanged(object sender, EventArgs e)
         {
             if(TxtQty.Text.Trim()!="")
@@ -148,6 +157,7 @@ namespace ProductSeller
             }
         }
 
+        //TxtUprice textbox when has an action
         private void TxtUprice_TextChanged(object sender, EventArgs e)
         {
             if(TxtUprice.Text.Trim()!="")
@@ -177,6 +187,7 @@ namespace ProductSeller
             }
         }
 
+        //Defined for error label 2 of Qty
         private void err_lb2()
         {
             lb2 = false;
@@ -184,6 +195,7 @@ namespace ProductSeller
             Add_Enable();
         }
 
+        //Defined for error label 2 of Uprice
         private void err_lb3()
         {
             lb3 = false;
@@ -191,6 +203,7 @@ namespace ProductSeller
             Add_Enable();
         }
 
+        //Defined for Enable Add button and Disable
         private void Add_Enable()
         {
             if(lb1 && lb2 && lb3)
